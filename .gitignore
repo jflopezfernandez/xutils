@@ -35,7 +35,7 @@
 *.i*86
 *.x86_64
 *.hex
-crc32/crc32
+crc32/src/crc32
 
 # Debug files
 *.dSYM/

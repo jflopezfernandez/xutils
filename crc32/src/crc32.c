@@ -3,6 +3,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+ *
+ *
+ * @cite Warren, H. S. (2013). Hacker’s Delight (2nd ed.). Addison-Wesley.
+ *
+ */
 unsigned int reverse(unsigned int byte) {
     byte = (byte & 0x55555555) <<  1 | (byte & 0xAAAAAAAA) >>  1;
     byte = (byte & 0x33333333) <<  2 | (byte & 0xCCCCCCCC) >>  2;
@@ -53,4 +59,3 @@ int main(int argc, char *argv[])
 
     return EXIT_SUCCESS;
 }
-
