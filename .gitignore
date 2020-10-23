@@ -29,12 +29,7 @@
 *.dylib
 
 # Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+bin2dec/src/bin2dec
 crc32/src/crc32
 
 # Debug files

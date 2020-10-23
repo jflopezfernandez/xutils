@@ -15,17 +15,24 @@ AC_PROG_INSTALL
 AC_CHECK_HEADERS([stdio.h stdlib.h])
 
 # Configuration options.
-# AC_ARG_ENABLE([debug],
-#     [AS_HELP_STRING([--enable-debug],
-#         [enable debug code (default is no)],
-#     [debug="$withval"], [debug=no])])
+AC_ARG_ENABLE([bin2dec],
+    [AS_HELP_STRING([--disable-bin2dec],
+        [disable bin2dec conversion utility (default is enabled)])],
+    [bin2dec_enabled="$enableval"],
+    [bin2dec_enabled=yes])
+
+if test "x$bin2dec_enabled" = xyes
+then
+    AC_CONFIG_SUBDIRS([bin2dec])
+fi
 
 AC_ARG_ENABLE([crc32],
     [AS_HELP_STRING([--disable-crc32],
-        [disable crc32 utility (default is crc32 enabled)])],
-    [crc32="$enableval"], [crc32=yes])
+        [disable crc32 utility (default is enabled)])],
+    [crc32_enabled="$enableval"],
+    [crc32_enabled=yes])
 
-if test "x$crc32" = xyes
+if test "x$crc32_enabled" = xyes
 then
     AC_CONFIG_SUBDIRS([crc32])
 fi
